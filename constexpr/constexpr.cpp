@@ -1,6 +1,6 @@
 //
-//  c++11 constexpt
-//
+//  c++11 constexpt 叫做常量表达式
+//  from http://zh.cppreference.com/w/cpp/language/constexpr
 
 #include <iostream>
 #include <map>
@@ -39,3 +39,8 @@ int main()
     }
     return 0;
 }
+
+/*
+1. constexpr指定符声明可以在编译时求得函数或变量的值。然后这些变量和函数（若给定了合适的函数参数）可用于仅允许编译时常量表达式之处。
+   用于对象中的constexpr指定符隐含了const。用于函数中的constexpr指定符隐含inline。
+*/
