@@ -21,57 +21,57 @@ void PrintIntDoubleUnOrderedMap( unordered_map<int,double>& m, char* pre) {
 /////
 void UnOrderedMapExample1() {
      unordered_map<int,double> foo1;
-    // operator[]ÔÚÖ÷¼ü²»´æÔÚÊ±£¬×Ô¶¯´´½¨
+    // operator[]åœ¨ä¸»é”®ä¸å­˜åœ¨æ—¶ï¼Œè‡ªåŠ¨åˆ›å»º
     foo1[0] = 32.8;
-    // ÆÕÍ¨²åÈë
+    // æ™®é€šæ’å…¥
     foo1.insert( unordered_map<int,double>::value_type(1, 33.2));
-    // ´ø°µÊ¾²åÈë£¬std::pair<int,double>µÈ¼ÛÓÚÉÏÊöµÄ
+    // å¸¦æš—ç¤ºæ’å…¥ï¼Œstd::pair<int,double>ç­‰ä»·äºä¸Šè¿°çš„
     //  unordered_map<int,double>::value_type
     foo1.insert(foo1.end(), pair<int,double>(2,35.8));
     
-    // ²åÈëÒ»¸ö·¶Î§
+    // æ’å…¥ä¸€ä¸ªèŒƒå›´
      unordered_map<int,double> foo2;
     foo2.insert( unordered_map<int,double>::value_type(3, 36.4));
     foo2.insert( unordered_map<int,double>::value_type(4, 37.8));
     foo2.insert( unordered_map<int,double>::value_type(5, 35.4));
     foo1.insert(foo2.begin(),foo2.end());
-    PrintIntDoubleUnOrderedMap(foo1,"²åÈëÔªËØºóµÄfoo1£º");
-    // ²éÕÒÖ÷¼ü4
+    PrintIntDoubleUnOrderedMap(foo1,"æ’å…¥å…ƒç´ åçš„foo1ï¼š");
+    // æŸ¥æ‰¾ä¸»é”®4
      unordered_map<int,double>::iterator it;
     it = foo1.find(4);
     if( it != foo1.end() )
     {
-         cout << "foo1.find(4)£º";
+         cout << "foo1.find(4)ï¼š";
          cout << "(" << it->first << "," << it->second << ")" 
             <<  endl;
     }
-    // É¾³ıÉÏÊöÕÒµ½µÄÔªËØ
+    // åˆ é™¤ä¸Šè¿°æ‰¾åˆ°çš„å…ƒç´ 
     if( it != foo1.end() )
     {
         foo1.erase(it);
     }
-    PrintIntDoubleUnOrderedMap(foo1,"É¾³ıÖ÷¼üÎª4µÄÔªËØºóµÄfoo1£º");
+    PrintIntDoubleUnOrderedMap(foo1,"åˆ é™¤ä¸»é”®ä¸º4çš„å…ƒç´ åçš„foo1ï¼š");
     
-    // ±éÀúÉ¾³ıÖ÷¼üÎª2µÄÔªËØ
+    // éå†åˆ é™¤ä¸»é”®ä¸º2çš„å…ƒç´ 
     for(it = foo1.begin();it != foo1.end();it++)
     {
-        //±éÀúÉ¾³ıÖ÷¼üµÈÓÚ2
-        //×¢Òâ£¬É¾³ıÔªËØ»áÊ¹µü´ú·¶Î§·¢Éú±ä»¯
+        //éå†åˆ é™¤ä¸»é”®ç­‰äº2
+        //æ³¨æ„ï¼Œåˆ é™¤å…ƒç´ ä¼šä½¿è¿­ä»£èŒƒå›´å‘ç”Ÿå˜åŒ–
         if(it->first == 2)
         {
             foo1.erase(it);
             break;
         }
     }
-    // ÄÚ²¿Êı¾İ
-     cout << "bucket_count£º" << foo1.bucket_count() <<  endl;
-     cout << "max_bucket_count£º" << foo1.max_bucket_count() <<  endl;
-     cout << "bucket_size£º" << foo1.bucket_size(0) <<  endl;
-     cout << "load_factor£º" << foo1.load_factor() <<  endl;
-     cout << "max_load_factor£º" << foo1.max_load_factor() <<  endl;
-    PrintIntDoubleUnOrderedMap(foo1,"É¾³ıÖ÷¼üÎª2µÄÔªËØºóµÄfoo1£º");
+    // å†…éƒ¨æ•°æ®
+     cout << "bucket_countï¼š" << foo1.bucket_count() <<  endl;
+     cout << "max_bucket_countï¼š" << foo1.max_bucket_count() <<  endl;
+     cout << "bucket_sizeï¼š" << foo1.bucket_size(0) <<  endl;
+     cout << "load_factorï¼š" << foo1.load_factor() <<  endl;
+     cout << "max_load_factorï¼š" << foo1.max_load_factor() <<  endl;
+    PrintIntDoubleUnOrderedMap(foo1,"åˆ é™¤ä¸»é”®ä¸º2çš„å…ƒç´ åçš„foo1ï¼š");
     foo1.clear();
-    PrintIntDoubleUnOrderedMap(foo1,"Çå¿ÕºóµÄfoo1£º");
+    PrintIntDoubleUnOrderedMap(foo1,"æ¸…ç©ºåçš„foo1ï¼š");
 }
 }
 int main( )
