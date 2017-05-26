@@ -8,13 +8,16 @@
 #include <string>
 #include <iostream>
 #include <unistd.h> 
+#include <map>
 using namespace std;
 
 int main()
 {
-    while(1)
+    std::map<int, int> mySet;
+    for(std::map<int,int>::iterator it = mySet.begin(); it != mySet.end(); ++it)
     {
-       sleep(1);
-    } 
+        it->first = 0;
+    }
+
     return 0;
 }
