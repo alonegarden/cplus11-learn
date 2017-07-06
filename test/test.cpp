@@ -11,13 +11,25 @@
 #include <map>
 using namespace std;
 
+
+
+void test1()
+{
+    static int stA = 0;
+    printf ("stA = %d\n", stA);
+    stA++;
+}
+
+void test2()
+{
+   static int stA = 5;
+    printf ("stA = %d\n", stA);
+
+}
 int main()
 {
-    std::map<int, int> mySet;
-    for(std::map<int,int>::iterator it = mySet.begin(); it != mySet.end(); ++it)
-    {
-        it->first = 0;
-    }
-
-    return 0;
+     test1();
+     test1();
+     test2();
+     return 0;
 }
