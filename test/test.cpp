@@ -11,25 +11,33 @@
 #include <map>
 using namespace std;
 
+#include <stdio.h>
 
+#include <vector>
 
-void test1()
+int main ()
 {
-    static int stA = 0;
-    printf ("stA = %d\n", stA);
-    stA++;
-}
+    vector<int> vec;
+    vec.push_back(1);
+    vec.push_back(2);
+    vec.push_back(3);
+    vec.push_back(3);
+    vec.push_back(5);
+    vec.push_back(6);
 
-void test2()
-{
-   static int stA = 5;
-    printf ("stA = %d\n", stA);
+    auto iter = vec.begin();
+    for (;iter!=vec.end(); iter++)
+    {
+        if(*iter == 3)
+            iter = vec.erase(iter);
+        //else 
+        //    ++iter;
+    }
 
-}
-int main()
-{
-     test1();
-     test1();
-     test2();
-     return 0;
+    for (iter = vec.begin(); iter != vec.end(); iter++)
+    {
+        cout << *iter << " "; 
+    }
+
+    return 0;
 }
