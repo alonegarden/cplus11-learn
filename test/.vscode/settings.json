@@ -1,8 +1,0 @@
-{
-    "files.associations": {
-        "hash_map": "cpp",
-        "*.tcc": "cpp",
-        "array": "cpp",
-        "initializer_list": "cpp"
-    }
-}
