@@ -1,12 +1,12 @@
 CXX=g++
-CXXFLAGS=-g -std=c++11 -Wall -pedantic -lpthread
+CXXFLAGS=-g -std=c++11 -Wall -pedantic
 BIN=test
 
 SRC=$(wildcard *.cpp)
 OBJ=$(SRC:%.cpp=%.o)
 
 all: $(OBJ)
-	$(CXX) -o $(BIN) $^ $(CXXFLAGS)
+	$(CXX) -o $(BIN) $^
 
 %.o: %.c
 	$(CXX) $@ -c $<
