@@ -26,7 +26,7 @@ int main()
     // use_count
     int n = p2.use_count();
     // expired
-    bool expire = p2.expired(); // use_count() == 0 Ê±·µ»Øtrue
+    bool expire = p2.expired(); // use_count() == 0 æ—¶è¿”å›žtrue
     // lock
     if (shared_ptr<string> sp1 = p2.lock()) {
         cout << *sp1 << endl;
